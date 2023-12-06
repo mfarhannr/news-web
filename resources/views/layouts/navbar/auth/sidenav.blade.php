@@ -11,15 +11,13 @@
             </button> --}}
 
             <!-- Right Side Of Navbar -->
+
             <ul class="navbar-nav ms-auto align-items-md-center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/berita">Berita</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/kategori">Kategori</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link active" aria-current="page" href="/berita">Berita</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto align-items-md-center">
@@ -41,8 +39,9 @@
                     <li class="nav-item dropdown ms-lg-5 ms-md-3">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <img src="{{ asset('img/profile/user.png') }}" class="rounded-circle" height="32"
-                                width="32" alt="...">
+                            {{ auth()->user()->name}}
+                            {{-- <img src="{{ asset('img/profile/user.png') }}" class="rounded-circle" height="32"
+                                width="32" alt="..."> --}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -6,19 +6,25 @@
     <div class="container my-4">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('berita.perform')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('berita.perform') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="namaJudul" class="form-label">Judul Berita</label>
                         <input type="text" name="judul" class="form-control" id="namaJudul">
+                        @error('judul')
+                            <p class='text-danger mb-0 text-xs pt-1'> {{ $message }} </p>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="kategoriSelect" class="form-label">Kategori</label>
                         <select class="form-select" name="kategori_id" id="kategoriSelect">
                             <option selected="" value="">pilih kategori berita</option>
-                            @foreach ($kategori as $itemk)
-                            <option value="{{$itemk->id}}">{{$itemk->nama_kategori}}</option>
+                            @foreach ($kategori as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
                             @endforeach
+                            @error('kategori_id')
+                                <p class='text-danger mb-0 text-xs pt-1'> {{ $message }} </p>
+                            @enderror
                         </select>
                     </div>
                     <div class="mb-3">
@@ -38,9 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="isi" class="form-label">Isi</label>
-                        {{-- <div id="isi" style="height:350px;"></div> --}}
-                        <input type="text" name="isi" class="form-control" id="namaJudul">
-                        {{-- <textarea class="form-control" name="isi" id="content-textarea" hidden style="display: none;"></textarea> --}}
+                        <textarea class="form-control" name="isi" id="isi" type="text"></textarea>
                         @error('isi')
                             <p class='text-danger mb-0 text-xs pt-1'> {{ $message }} </p>
                         @enderror

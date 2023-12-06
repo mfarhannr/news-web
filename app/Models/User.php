@@ -43,8 +43,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function User()
+    public function berita()
     {
-        return $this->hasMany(Berita::class, 'user_id');
+        return $this->hasMany(Berita::class);
     }
 }

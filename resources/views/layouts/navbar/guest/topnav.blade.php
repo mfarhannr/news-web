@@ -3,7 +3,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', 'Portal Brita') }}
             </a>
             {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -12,7 +12,7 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto align-items-md-center">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto align-items-md-center">
+            <ul class="navbar-nav ms-auto align-items-md-center"> --}}
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))

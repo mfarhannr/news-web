@@ -13,6 +13,10 @@ class Berita extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id');
+        return $this->belongsTo(Kategori::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
