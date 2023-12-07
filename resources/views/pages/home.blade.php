@@ -88,7 +88,7 @@
     <div class="container mt-3">
         <div class="row">
             @foreach ($allBerita as $item)
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card ">
                         <img src="{{ asset('img/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"
                             alt="gambarberita" style="width: 300px; height:200px;">

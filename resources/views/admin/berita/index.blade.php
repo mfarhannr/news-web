@@ -23,9 +23,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php $no = 1; @endphp
                             @foreach ($allBerita as $item)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th>{{ $no++ }}</th>
                                     <td>{{ Str::limit($item->judul, 10) }}</td>
                                     <td>{!! Str::words($item->isi, 20) !!}</td>
                                     <td>{{ $item->kategori->nama_kategori }}</td>

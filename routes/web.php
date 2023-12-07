@@ -21,9 +21,10 @@ use App\Http\Controllers\PagesController;
 
 Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+
 Route::middleware(['auth'])->group(function () {
     Route::controller(BeritaController::class)->group(function () {
+        Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
         Route::get('/berita', 'index');
         Route::get('/berita-create', 'create');
         Route::post('/berita-create', 'store')->name('berita.perform');
@@ -40,6 +41,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 Route::controller(PagesController::class)->group(function () {
-    Route::get('/', 'index')->name('home');
+    Route::get('/', 'index')->name('beranda');
     Route::get('/{id}', 'detail')->name('detail');
 });

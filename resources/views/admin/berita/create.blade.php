@@ -5,6 +5,9 @@
 @section('content')
     <div class="container my-4">
         <div class="card">
+            <div class="card-header">
+                <h5 class="fw-bold my-auto">Tambahkan Berita</h5>
+            </div>
             <div class="card-body">
                 <form action="{{ route('berita.perform') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -28,7 +31,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Image" id="label" class="form-label" style="border-radius:10px;">Masukkan Gambar
+                        <label for="Image" id="label" class="form-label " style="border-radius:10px;width:100%;">Masukkan Gambar
                         {{-- <div class="card shadow-none border text-center p-3">
                             <label class="form-label border-dashed p-3 cursor-pointer" id="label"
                                 style="border-radius:10px;" for="imageFile">Masukkan Gambar --}}

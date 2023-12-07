@@ -3,7 +3,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                News Web
             </a>
             {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -14,10 +14,13 @@
 
             <ul class="navbar-nav ms-auto align-items-md-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="/kategori">Kategori</a>
+                    <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/berita">Berita</a>
+                    <a class="nav-link" aria-current="page" href="/kategori">Kategori</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/berita">Berita</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto align-items-md-center">
@@ -39,17 +42,24 @@
                     <li class="nav-item dropdown ms-lg-5 ms-md-3">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ auth()->user()->name}}
+                            {{ auth()->user()->name }}
                             {{-- <img src="{{ asset('img/profile/user.png') }}" class="rounded-circle" height="32"
                                 width="32" alt="..."> --}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('beranda') }}"
+                                {{-- onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();" --}}
+                                             >
+                                {{ __('Beranda') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
