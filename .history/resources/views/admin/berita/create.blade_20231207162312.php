@@ -28,10 +28,10 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Image" id="label" class="form-label" style="border-radius:10px;">Masukkan Gambar
-                        {{-- <div class="card shadow-none border text-center p-3">
+                        <label for="namaJudul" class="form-label">Judul Berita</label>
+                        <div class="card shadow-none border text-center p-3">
                             <label class="form-label border-dashed p-3 cursor-pointer" id="label"
-                                style="border-radius:10px;" for="imageFile">Masukkan Gambar --}}
+                                style="border-radius:10px;" for="imageFile">Masukkan Gambar
                                 <img class="img-preview img-fluid mb-2">
                                 <img src="{{ asset('img/imageplus.png') }}" id="plusimg" class="img-fluid p-md-3"
                                     alt="">
@@ -41,6 +41,7 @@
                             @error('gambar')
                                 <p class='text-danger mb-0 text-xs pt-1'> {{ $message }} </p>
                             @enderror
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="isi" class="form-label">Isi</label>
