@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="container my-4">
+        <div id="alert">
+            @include('components.alert')
+        </div>
         <div class="mb-4">
             <div class="card">
                 <div class="card-header">
                     <h5 class="fw-bold my-auto">Tambah Kategori</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('kategori.perform') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('kategori.perform') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="namaJudul" class="form-label">Nama Kategori</label>
@@ -32,23 +35,24 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nama Kategori</th>
+                                <th scope="col">Tanggal Dibuat</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @php $no = 1; @endphp
                             @foreach ($kategori as $item)
                                 <tr>
-                                    <th>{{ $no++ }}</th>
+                                    <th scope="row">1</th>
                                     <td>{{ $item->nama_kategori }}</td>
+                                    <td>{{ $item->created_at->format('F j, Y') }}</td>
                                     <td>
                                         <a href="{{ route('kategori.edit', $item->id) }}"
-                                            class="btn btn-sm btn-success">edit</a>
+                                            class="btn btn-sm btn-success">Edit</a>
                                         <form class="d-inline" onsubmit="return confirm('sure to delete this data')"
                                             action="{{ route('kategori.delete', $item->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm btn-danger mb-0">delete</button>
+                                            <button class="btn btn-sm btn-danger mb-0">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

@@ -23,7 +23,7 @@
                 <div class="card-header">{{ __('Total Pengguna') }}</div>
 
                 <div class="card-body">
-
+                    1
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <div class="card-header">{{ __('Total Kategori') }}</div>
 
                 <div class="card-body">
-
+                    1
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <div class="card-header">{{ __('Total Berita') }}</div>
 
                 <div class="card-body">
-                    
+                    1
                 </div>
             </div>
         </div>

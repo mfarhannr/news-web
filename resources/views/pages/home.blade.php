@@ -85,25 +85,26 @@
             </button>
         </div>
     </div>
-    <div class="container mt-3">
+   <div class="container my-5">
         <div class="row">
-            @foreach ($allBerita as $item)
-                <div class="col-lg-4 col-md-6 mt-3">
-                    <div class="card ">
+            @foreach ($berita as $item)
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="card" style="min-height: 460px">
                         <img src="{{ asset('img/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"
-                            alt="gambarberita" style="width: 300px; height:200px;">
+                            alt="" style="height:300px">
                         <div class="card-body">
-                            <div class="card-title h5 fw-bold">{{ Str::limit($item->judul, 25, '...') }}</div>
-                            {{-- <p class="card-text">{!! Str::words($item->isi, 20, '...') !!}</p> --}}
+                            <div class="badge text-bg-secondary rounded-pill mb-3">{{ $item->kategori->nama_kategori }}</div>
+                            <div class="card-title h6 fw-bold">{{ $item->judul }}</div>
+                            <p class="card-text">{!! Str::limit($item->isi, 100) !!}</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="{{ route('detail', $item->id) }}" class="btn btn-md btn-outline-secondary">View</a>
-                                <small class="text-body-secondary">{{ $item->user->name }} |
-                                    <span class="fw-bold">{{ $item->kategori->nama_kategori }}</span></small>
+                                <a href="{{ route('detail', $item->id) }}" class="btn btn-md btn-outline-secondary">Lihat Berita</a>
+                                <small class="text-body-secondary fw-bold">{{ $item->user->name }}</small>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+
         </div>
     </div>
 @endsection

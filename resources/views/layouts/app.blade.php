@@ -1,15 +1,13 @@
 @include('layouts.frame.head')
 
 <body>
-    @include('components.theme')
     <div id="app">
-
+        @include('components.theme')
         @auth
             @include('layouts.navbar.auth.sidenav')
             <main>
                 @yield('content')
             </main>
-
         @endauth
 
         @guest

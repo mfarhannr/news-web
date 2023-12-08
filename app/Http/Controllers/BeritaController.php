@@ -12,8 +12,8 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $allBerita = Berita::get();
-        return view('admin.berita.index', compact('allBerita'));
+        $berita = Berita::get();
+        return view('admin.berita.index', compact('berita'));
     }
 
     public function create()
@@ -30,7 +30,7 @@ class BeritaController extends Controller
             'user_id'       => '',
             'kategori_id'   => 'required',
             'judul'         => 'required',
-            'gambar'        => 'image|mimes:jpg,png,jpeg',
+            'gambar'        => 'required|image|mimes:jpg,png,jpeg',
             'isi'           => 'required'
         ]);
 
@@ -49,7 +49,7 @@ class BeritaController extends Controller
 
         $berita->save();
 
-        return redirect('/berita')->with('succes', 'added data successfully');
+        return redirect('/berita')->with('success', 'added data successfully');
     }
 
     public function edit($id)
@@ -63,7 +63,7 @@ class BeritaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'user_id'       => 'required',
+            'user_id'       => '',
             'kategori_id'   => 'required',
             'judul'         => 'required',
             'gambar'        => 'image|mimes:jpg,png,jpeg',
@@ -81,7 +81,7 @@ class BeritaController extends Controller
 
             $request->gambar->move(public_path('img/gambar'), $gambarName);
 
-            $berita->user_id     = $request->user_id;
+            $berita->user_id     = auth()->user()->id;
             $berita->kategori_id = $request->kategori_id;
             $berita->judul       = $request->judul;
             $berita->gambar      = $gambarName;
@@ -89,18 +89,16 @@ class BeritaController extends Controller
 
             $berita->save();
 
-
             return redirect('/berita');
         } else {
             $berita = Berita::find($id);
 
-            $berita->user_id     = $request->user_id;
+            $berita->user_id     = auth()->user()->id;
             $berita->kategori_id = $request->kategori_id;
             $berita->judul       = $request->judul;
             $berita->isi         = $request->isi;
 
             $berita->save();
-
 
             return redirect('/berita');
         }
@@ -115,6 +113,6 @@ class BeritaController extends Controller
         File::delete($path . $berita->gambar);
         $berita->delete();
 
-        return redirect('/berita')->with('succes', 'success, data deleted');
+        return redirect('/berita')->with('success', 'success, data deleted');
     }
 }
