@@ -66,13 +66,13 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset ('./img/carousel/berita1.jpg') }}" class="d-block w-100" style="width:1600px ; height:400px;">
+                    <img src="{{ asset ('./img/carousel/berita1.jpg') }}" class="d-block w-100" style="height:500px;">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset ('./img/carousel/berita2.jpg') }}" class="d-block w-100" style="width:1600px ; height:400px;">
+                    <img src="{{ asset ('./img/carousel/berita2.jpg') }}" class="d-block w-100" style="height:500px;">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset ('./img/carousel/berita3.jpg') }}" class="d-block w-100" style="width:1600px ; height:400px;">
+                    <img src="{{ asset ('./img/carousel/berita3.jpg') }}" class="d-block w-100" style="height:500px;">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -98,7 +98,7 @@
                             <p class="card-text">{!! Str::limit($item->isi, 100) !!}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{ route('detail', $item->id) }}" class="btn btn-md btn-outline-secondary">Lihat Berita</a>
-                                <small class="text-body-secondary fw-bold">{{ $item->user->name }}</small>
+                                <small class="text-body-secondary fw-bold">by {{ $item->user->name }}</small>
                             </div>
                         </div>
                     </div>

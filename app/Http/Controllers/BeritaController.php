@@ -12,8 +12,8 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $berita = Berita::get();
-        return view('admin.berita.index', compact('berita'));
+        $allBerita = Berita::get();
+        return view('admin.berita.index', compact('allBerita'));
     }
 
     public function create()

@@ -17,7 +17,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">No.</th>
+                                <th scope="col">No</th>
                                 <th scope="col">Judul</th>
                                 <th scope="col">Isi</th>
                                 <th scope="col">Kategori</th>
@@ -28,7 +28,7 @@
                         </thead>
                         <tbody>
                             @php $no = 1; @endphp
-                            @foreach ($berita as $item)
+                            @foreach ($allBerita as $item)
                                 <tr>
                                     <th>{{ $no++ }}</th>
                                     <td>{{ $item->judul }}</td>

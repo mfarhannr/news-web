@@ -33,16 +33,17 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nama Kategori</th>
-                                <th scope="col">Tanggal Dibuat</th>
-                                <th scope="col">Aksi</th>
+                                <th scope="col" style="width:25%">No</th>
+                                <th scope="col" style="width:25%">Nama Kategori</th>
+                                <th scope="col" style="width:25%">Tanggal Dibuat</th>
+                                <th scope="col" style="width:25%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php $no = 1; @endphp
                             @foreach ($kategori as $item)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th>{{ $no++ }}</th>
                                     <td>{{ $item->nama_kategori }}</td>
                                     <td>{{ $item->created_at->format('F j, Y') }}</td>
                                     <td>

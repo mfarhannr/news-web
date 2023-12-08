@@ -14,6 +14,7 @@ class PagesController extends Controller
     public function detail($id)
     {
         $berita = Berita::findOrFail($id);
-        return view('pages.detail', compact('berita'));
+        $allBerita = Berita::paginate(3);
+        return view('pages.detail', compact('berita', 'allBerita'));
     }
 }
