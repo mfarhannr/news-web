@@ -49,9 +49,9 @@
                         <h4 class="fst-italic">Tentang</h4>
                         <ul class="list-unstyled">
                             <div class="col-lg-8">
-                                <h5 class="mb-0 mt-1">Judul    :{{ $item->judul }}</h5>
-                                <h5 class="mb-0 mt-1">Dibuat   :{{ $item->created_at->format('F j, Y') }}</h5>
-                                <h5 class="mb-0 mt-1">Kategori :{{ $item->kategori->nama_kategori }}</h5>
+                                <h5 class="mb-0 mt-1">Judul    :{{ $berita->judul }}</h5>
+                                <h5 class="mb-0 mt-1">Dibuat   :{{ $berita->created_at->format('F j, Y') }}</h5>
+                                <h5 class="mb-0 mt-1">Kategori :{{ $berita->kategori->nama_kategori }}</h5>
                             </div>
                         </ul>
                     </div>
