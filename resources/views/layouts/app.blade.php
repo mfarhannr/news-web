@@ -4,7 +4,7 @@
     <div id="app">
         @include('components.theme')
         @auth
-            @include('layouts.navbar.auth.sidenav')
+            @include('layouts.navbar.auth.topnav')
             <main>
                 @yield('content')
             </main>

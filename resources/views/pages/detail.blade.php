@@ -9,10 +9,9 @@
                     <p class="blog-post-meta">{{ $berita->created_at->format('F j, Y') }} author by
                         <span>{{ $berita->user->name }}</span>
                     </p>
-                    {{-- <div class="d-flex justify-content-center"> --}}
                     <img src="{{ asset('img/gambar/' . $berita->gambar) }}" class="mb-3 bd-placeholder-img  card-img-top"
-                        alt="" {{-- style="max-height: 600px; width: auto;" --}}>
-                    {{-- </div> --}}
+                        alt="">
+
                     {!! $berita->isi !!}
                 </article>
 
